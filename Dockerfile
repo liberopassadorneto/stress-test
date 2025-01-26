@@ -1,11 +1,11 @@
 # Etapa de Build
-FROM golang:1.20-alpine AS builder
+FROM golang:1.23.0-alpine AS builder
 
 # Diretório de trabalho dentro do container
 WORKDIR /app
 
-# Copiando o go.mod e go.sum para cache de dependências
-COPY go.mod go.sum ./
+# Copiando o go.mod para cache de dependências
+COPY go.mod ./
 
 # Baixando as dependências
 RUN go mod download
